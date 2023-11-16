@@ -382,7 +382,7 @@ export const Container = React.memo(
             onLayout={onLayout}
             pointerEvents="box-none"
           >
-            <View
+            <Animated.View
               pointerEvents="box-none"
               style={[
                 styles.topContainer,
@@ -422,7 +422,7 @@ export const Container = React.memo(
                     tabProps,
                   })}
               </Animated.View>
-            </View>
+            </Animated.View>
 
             <AnimatedPagerView
               ref={containerRef}
