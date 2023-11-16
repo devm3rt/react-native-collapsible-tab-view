@@ -492,7 +492,7 @@ export const useScrollHandlerY = (name: TabName) => {
             if (focusedIsOnTop) {
               nextPosition = snappingTo.value
             } else if (currIsOnTop) {
-              nextPosition = headerHeight.value || 0
+              nextPosition = Math.min(focusedScrollY, headerScrollDistance.value) || headerHeight.value || 0
             }
           } else if (currIsOnTop || focusedIsOnTop) {
             nextPosition = Math.min(focusedScrollY, headerScrollDistance.value)
