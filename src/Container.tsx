@@ -72,7 +72,8 @@ export const Container = React.memo(
         renderHeader,
         renderTabBar = (props) => <MaterialTabBar {...props} />,
         headerContainerStyle,
-        cancelTranslation,
+        cancelHeaderTranslation,
+        cancelTabbarTranslation,
         containerStyle,
         lazy,
         cancelLazyFadeIn,
@@ -381,16 +382,15 @@ export const Container = React.memo(
             onLayout={onLayout}
             pointerEvents="box-none"
           >
-            <Animated.View
+            <View
               pointerEvents="box-none"
               style={[
                 styles.topContainer,
                 headerContainerStyle,
-                !cancelTranslation && stylez,
               ]}
             >
-              <View
-                style={[styles.container, styles.headerContainer]}
+              <Animated.View
+                style={[styles.container, styles.headerContainer, !cancelHeaderTranslation && stylez]}
                 onLayout={getHeaderHeight}
                 pointerEvents="box-none"
               >
@@ -404,9 +404,9 @@ export const Container = React.memo(
                     onTabPress,
                     tabProps,
                   })}
-              </View>
-              <View
-                style={[styles.container, styles.tabBarContainer]}
+              </Animated.View>
+              <Animated.View
+                style={[styles.container, styles.tabBarContainer,!cancelTabbarTranslation && stylez]}
                 onLayout={getTabBarHeight}
                 pointerEvents="box-none"
               >
@@ -421,8 +421,8 @@ export const Container = React.memo(
                     onTabPress,
                     tabProps,
                   })}
-              </View>
-            </Animated.View>
+              </Animated.View>
+            </View>
 
             <AnimatedPagerView
               ref={containerRef}

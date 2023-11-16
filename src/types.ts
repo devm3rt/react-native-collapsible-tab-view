@@ -94,7 +94,8 @@ export type CollapsibleProps = {
 
   headerContainerStyle?: StyleProp<Animated.AnimateStyle<ViewStyle>>
   containerStyle?: StyleProp<ViewStyle>
-  cancelTranslation?: boolean
+  cancelHeaderTranslation?: boolean
+  cancelTabbarTranslation?: boolean
   /**
    * If lazy, will mount the screens only when the tab is visited. There is a
    * default fade in transition.
