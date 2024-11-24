@@ -4,7 +4,7 @@
 [![Version][version-badge]][package]
 [![MIT License][license-badge]][license]
 [![Runs with Expo][expo-badge]][expo]
-  
+      
 - [Expo App](#expo-app)
 - [Demo](#demo)
 - [Features](#features)
